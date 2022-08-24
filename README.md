@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+## Assignment overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+For this assignment we'd like you to build a JavaScript single page application that supports searching for movie titles and saving favorites.
 
-## Available Scripts
+## API requirements
 
-In the project directory, you can run:
+We've provided an API endpoint for you to test your implementation. It implements the following two API endpoints:
 
-### `npm start`
+| Method   | Path        | Parameters                           | Example                                      |
+|----------|-------------|--------------------------------------|----------------------------------------------|
+| GET      | /search     | title (string)                       | /search?title=star%20wars                    |
+| POST     | /favorites  | omdb_id (string), favorite (boolean) | /favorites?omdb_id=tt0038650&favorite=false  |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* The `/search` endpoint accepts a movie title parameter and returns results in JSON format. Please see http://www.omdbapi.com for a description of the result format. In addition to the format described on omdbapi.com, results will include an additional boolean `favorite` parameter. (Note that this API endpoint has a limitation of 1000 requests per day)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* The `/favorites` endpoint accepts an omdb id for a movie title and a boolean to set or unset the given title as a favorite. Make a POST request to this api to set/unset a favorite for a specific title.  
 
-### `npm test`
+* You may implement your UI using any front-end JavaScript technology: E.g. React, Vue or even vanilla JavaScript.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Your solution should be self-contained as a client-only implementation that does not require any additional server component.
 
-### `npm run build`
+* Note that in a real-world scenario we would probably have a concept of a list of favorites per unique user, but for the purposes of this exercise assume there is only a single list of favorites shared among all users.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Design requirements
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Please match the visual design of your solution as closely as possible to this mockup using HTML/CSS only. 
 
-### `npm run eject`
+![Movie search UI mockup!](./assets/uimockup.png "Movie search UI mockup")
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Clicking on the heart icon should toggle the favorite status. Red indicates it is a favorite. White is not a favorite.
+* The font should be `Montserrat` from Google Fonts
+* You may use this SVG path as the 'mark favorite' icon:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+      </svg>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Evaluation criteria
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+When evaluating solutions, we'll be considering the following criteria:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Is your code: correct, clear, concise and readable?  
+* Have you implemented the API and single-page design according to the requirements outlined above?
+* Have you handled error scenarios appropriately?
 
-### Code Splitting
+## Testing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+In order to test your API solution we have provided a sample server api available at http://th-recruiting-moviesapi.herokuapp.com. Note that this server may already contain some stored favorites.
 
-### Analyzing the Bundle Size
+## Time limit
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+We believe your time is valuable! We designed this exercise to be an interesting challenge, yet not require an overwhelming amount of time. You should be able to complete this in under 4 hours. If you're still not 100% done after 4 hours, don't worry! Please send us your progress so far. We'd rather see a partial attempt than no attempt at all.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

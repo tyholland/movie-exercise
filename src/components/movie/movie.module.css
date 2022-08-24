@@ -1,0 +1,35 @@
+.moviePoster {
+  height: 100%;
+  width: 100%;
+}
+
+.moviePosterContainer {
+  height: 300px;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.movieTitle {
+  overflow: hidden;
+  width: 180px;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin: 10px;
+}
+
+.movieContainer {
+  margin: 1%;
+}
+
+.movieHeart {
+  position: relative;
+  top: -290px;
+  width: 35px;
+  left: 160px;
+  background: no-repeat;
+  border: none;
+  cursor: pointer;
+}
